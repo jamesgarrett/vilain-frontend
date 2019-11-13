@@ -4,64 +4,36 @@
   font-weight: normal;
   font-style: normal;
 }
-body {
-  margin: 0;
-  text-align: center;
-}
-
-.wrapper {
-  width: 40rem;
-  margin: 2em auto;
-  border-bottom: 2px solid #ccc;
-}
-
-.content {
-  float: left;
-  width: 29rem;
-  padding: 1em;
-  background-color: #cde;
-}
-
-.sidebar {
-  float: left;
-  width: 10rem;
-  margin-left: 1em;
-  border-left: 2px solid #999;
-  padding: 1em;
-  background-color: #def;
-}
-
 :root {
-  font-size: calc(100vw / 40);
+  font-size: 14px;
 }
 
-.content, .sidebar {
-  box-sizing: border-box;
-  margin-top: 2px;
+.menu {
+  width: 100%;
+  background: black;
+  height: 100vh;
 }
-
-.ruler {
-  clear: left;
-  width: 640px;
-  margin: 0 auto;
-  border-top: 2px solid #555;
+.menu .closed {
+  display: none;
 }
 
 nav {
-  height: 100vh;
-  width: 100vw;
+  width: 100%;
+  height: 75vh;
   position: fixed;
-  background: black;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 nav .city {
-  display: table;
   width: 100%;
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
   font-family: "KILLINGEVE";
-  font-size: 5rem;
+  font-size: 4.5rem;
   letter-spacing: 1.15px;
 }
 nav .city:first-child {
