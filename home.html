@@ -9,30 +9,29 @@
 </head>
 <body>
 	<header class="collapsed">
-		<div class="top-bar">
-			<div class="one">
-				<svg class="hamburger" id="hamburger" width="36px" height="22px" fill="white">            
-	                <rect class="top" id="bar-1" x="0" y="0" width="36" height="2"></rect>
-	                <rect class="middle" id="bar-2" x="0" y="10" width="36" height="2"></rect>
-					<rect class="bottom" id="bar-3" x="0" y="20" width="36" height="2"></rect>
-	            </svg>
-            </div>
-			<div class="two"><img src="./img/travel-vilain-logo.svg" alt=""></div>
-			<div class="three"><img src="./img/sapphire.svg" alt=""></div>
-		</div>
-		<div class="menu-bg">
-			<nav>
-				<a class="city" href="#">Paris</a>
-				<a class="city" href="#">London</a>
-				<a class="city" href="#">Tuscany</a>
-				<a class="city" href="#">Barcelona</a>
-				<a class="city" href="#">Rome</a>
-				<a class="city" href="#">Amsterdam</a>
-				<a class="city" href="#">Global Style</a>
-			</nav>
-		</div>
-		<img src="/vilain.png" alt="" class="logo">
-		<div class="sponsor"></div>
+	  <div class="top">
+	    <div class="one">
+	    	<svg class="hamburger" id="hamburger" width="36px" height="22px">            
+                <rect class="top-bar" fill="white" id="bar-1" x="0" y="0" width="36" height="2"></rect>
+                <rect class="middle-bar" fill="white" id="bar-2" x="0" y="10" width="36" height="2"></rect>
+				<rect class="bottom-bar" fill="white" id="bar-3" x="0" y="20" width="36" height="2"></rect>
+            </svg>
+        </div>
+	    <div class="two"><img src="./img/travel-vilain-logo.svg" alt=""></div>
+	    <div class="three"><img src="./img/sapphire.svg" alt=""></div>
+	  </div>
+	  <div class="middle">
+	      <a class="city" href="#">Paris</a>
+	      <a class="city" href="#">London</a>
+	      <a class="city" href="#">Amsterdam</a>
+	      <a class="city" href="#">Tuscany</a>
+	      <a class="city" href="#">Barcelona</a>
+	      <a class="city" href="#">Rome</a>
+		  <a class="city" href="#">Berlin</a>
+	  </div>
+	  <div class="bottom">
+	  	<a class="city" href="#">Global Style</a>
+	  </div>
 	</header>
 	<main>
 		<section>
@@ -62,10 +61,7 @@
 	<footer>
 		<script>
 			$( '.hamburger' ).click(function() {
-			  $('header').toggleClass('open');
-			});
-			$( '.hamburger' ).click(function() {
-			  $('header').toggleClass('collapsed');
+			  $('header').toggleClass('collapsed open');
 			});
 		</script>
 	</footer>

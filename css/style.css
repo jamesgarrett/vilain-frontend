@@ -8,99 +8,92 @@
   font-size: 14px;
 }
 
-.menu-bg {
+header {
+  background: black;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  transition: 0.75s ease-in-out;
+}
+header * {
+  transition: 0.5s ease-in-out;
+}
+
+.top {
   width: 100%;
   height: 10vh;
-  z-index: 97;
-  position: fixed;
-  transition: 1s ease-in-out;
-}
-
-.open .menu-bg {
-  height: 100vh;
-  transition: 1s ease-in-out;
-  background: black;
-}
-
-.top-bar {
-  position: fixed;
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
-  flex-grow: 1;
-  padding: 1rem 2rem;
-  background: black;
+  min-height: 85px;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 80%, rgba(0, 0, 0, 0.6) 100%);
-  z-index: 99;
-}
-.top-bar div {
-  width: 48px;
   display: flex;
+  justify-content: space-between;
+  padding: 1rem;
 }
-.top-bar .three {
-  justify-content: flex-start;
-}
-.top-bar .two {
-  justify-content: center;
-}
-.top-bar .three {
-  justify-content: flex-end;
+.top .one, .top .two, .top .three {
+  width: 90px;
 }
 
-nav {
-  visibility: hidden;
-}
-
-.open nav {
-  visibility: visible;
+.middle {
   width: 100%;
-  position: fixed;
-  top: 50%;
-  transform: translateY(-50%);
+  height: 80vh;
+  font-size: 6rem;
+  overflow: scroll;
+  text-align: center;
   display: flex;
   flex-direction: column;
-  z-index: 98;
 }
-.open nav .city {
+
+.bottom {
   width: 100%;
-  display: flex;
-  flex-grow: 1;
-  justify-content: center;
-  align-items: center;
+  height: 85px;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  background: black;
+}
+
+header.collapsed {
+  background: transparent;
+}
+header.collapsed .middle {
+  height: 0vh;
+}
+header.collapsed .bottom {
+  height: 0vh;
+}
+
+.city {
   font-family: "KILLINGEVE";
   font-size: 4.5rem;
   letter-spacing: 1.15px;
 }
-.open nav .city:first-child {
+.city:first-child {
   color: #F5000D;
 }
-.open nav .city:nth-child(2) {
+.city:nth-child(2) {
   color: #C8004C;
 }
-.open nav .city:nth-child(3) {
+.city:nth-child(3) {
   color: #9B0088;
 }
-.open nav .city:nth-child(4) {
+.city:nth-child(4) {
   color: #8600A6;
 }
-.open nav .city:nth-child(5) {
+.city:nth-child(5) {
   color: #9D28F3;
 }
-.open nav .city:nth-child(6) {
+.city:nth-child(6) {
   color: #8B59FF;
 }
 
-.open .hamburger .top {
+.open .hamburger .top-bar {
   animation: downRotate 1s alternate forwards;
   transform-origin: 50% 50%;
 }
-.open .hamburger .middle {
+.open .hamburger .middle-bar {
   opacity: 0;
   transition: 1s ease-in-out;
 }
-.open .hamburger .bottom {
+.open .hamburger .bottom-bar {
   animation: upRotate 1s alternate forwards;
   transform-origin: 50% 50%;
 }
