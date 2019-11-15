@@ -3,12 +3,17 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Vilain Prototype</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/style.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preload" href="/fonts/KILLINGEVE-Regular.woff2" as="font">
 </head>
 <body>
+
+	<!-- Header Component -- Contains global nav. divided into top, middle and bottom -->
 	<header class="collapsed">
+	<!-- top section is global nav -->
 	  <div class="top">
 	    <div class="one">
 	    	<svg class="hamburger" id="hamburger" width="36px" height="22px">            
@@ -20,6 +25,7 @@
 	    <div class="two"><img src="./img/travel-vilain-logo.svg" alt=""></div>
 	    <div class="three"><img src="./img/sapphire.svg" alt=""></div>
 	  </div>
+	  <!-- middle section contains menu links -->
 	  <div class="middle">
 	      <a class="city" href="#">Paris</a>
 	      <a class="city" href="#">London</a>
@@ -29,41 +35,78 @@
 	      <a class="city" href="#">Rome</a>
 		  <a class="city" href="#">Berlin</a>
 	  </div>
+	  <!-- bottom section contains secondary brand experience -->
 	  <div class="bottom">
 	  	<a class="city" href="#">Global Style</a>
 	  </div>
 	</header>
 	<main>
-		<section>
-			<div class="card hero">
-				<button class="cta"></button>
-				<svg class="down"></svg>
-			</div>
+		<!-- hero section -->
+		<section class="hero container-fluid no-gutter">
+			<h4 class="text-center">Dare to Discover</h4>
+			<svg width="51px" height="26px" viewBox="0 0 51 26" class="arrow-down mb">
+			        <g id="vilain/home-copy-2" transform="translate(-225.000000, -1009.000000)" fill="#FFFFFF">
+			            <polygon id="arrow-down" points="273.966864 1009.33333 250.666667 1030.89744 227.36647 1009.33333 225.333333 1011.2212 250.666667 1034.66667 276 1011.2212"></polygon>
+			        </g>
+			</svg>
+			<video autoplay muted loop id="myVideo">
+				<source src="img/dummy/clip-1-xiv.mp4" type="video/mp4">
+				<img src="img/dummy/hero-1.png" title="Your browser does not support the <video> tag">
+			</video>		
 		</section>
-		<section>
-			<div class="card">
+		<section class="articles">
+			<div class="card" data-aos="zoom-in-right">
 				<div class="content">
-					<h4>Escape to Le Marais</h4>
-					<div class="subtitle">These chic and cozy apartments come stocked with a fridge full of French champagne.</div>
-					<button class="cta">READ MORE</button>
+					<h2>Escape to Le Marais</h2>
+					<p class="subtitle">These chic and cozy apartments come stocked with a fridge full of French champagne.</p>
+					<button class="cta">READ MORE →</button>
 				</div>
 			</div>
-			<div class="card">
+			<div class="card" data-aos="zoom-in-left">
 				<div class="content">
-					<h4>Don’t Sleep on the Big Smoke</h4>
-					<div class="subtitle">London’s culinary scene is anything but bland, and these three standout spots will show you why.</div>
-					<button class="cta">READ MORE</button>
+					<h2>Don’t Sleep on the Big Smoke</h2>
+					<p class="subtitle">London’s culinary scene is anything but bland, and these three standout spots will show you why.</p>
+					<button class="cta">READ MORE →</button>
+				</div>
+			</div>
+			<div class="card" data-aos="zoom-in-right">
+				<div class="content">
+					<h2>Escape to Le Marais</h2>
+					<p class="subtitle">These chic and cozy apartments come stocked with a fridge full of French champagne.</p>
+					<button class="cta">READ MORE →</button>
+				</div>
+			</div>
+			<div class="card" data-aos="zoom-in-left">
+				<div class="content">
+					<h2>Don’t Sleep on the Big Smoke</h2>
+					<p class="subtitle">London’s culinary scene is anything but bland, and these three standout spots will show you why.</p>
+					<button class="cta">READ MORE →</button>
 				</div>
 			</div>
 		</section>
-		<section></section>
 	</main>
-	<footer>
-		<script>
-			$( '.hamburger' ).click(function() {
-			  $('header').toggleClass('collapsed open');
-			});
-		</script>
+	<footer class="footer container-fluid">
+			<div class="left">
+				<img src="./img/travel-vilain-logo.svg" alt="">
+			</div>
+			<div class="middle">
+				<a href="#">Home</a>
+				<a href="#">Travel</a>
+				<a href="#">Fashion</a>
+				<a href="#">All Cities</a>
+			</div>
+			<div class="right text-right">
+				3
+			</div>
 	</footer>
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+		$( '.hamburger' ).click(function() {
+		  $('header').toggleClass('collapsed open');
+		});
+
+		AOS.init();
+	</script>
 </body>
 </html>

@@ -1,25 +1,17 @@
-@font-face {
-  font-family: "KILLINGEVE";
-  src: url("./fonts/KILLINGEVE-Regular.woff2") format("woff2"), url("./fonts/KILLINGEVE-Regular.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-:root {
-  font-size: 14px;
-}
-
+/* Header Component */
 header {
   background: black;
   position: fixed;
   width: 100%;
   height: 100vh;
+  top: 0;
+  z-index: 99;
   transition: 0.75s ease-in-out;
 }
 header * {
   transition: 0.5s ease-in-out;
 }
-
-.top {
+header .top {
   width: 100%;
   height: 10vh;
   min-height: 85px;
@@ -28,11 +20,10 @@ header * {
   justify-content: space-between;
   padding: 1rem;
 }
-.top .one, .top .two, .top .three {
+header .top .one, header .top .two, header .top .three {
   width: 90px;
 }
-
-.middle {
+header .middle {
   width: 100%;
   height: 80vh;
   font-size: 6rem;
@@ -40,9 +31,9 @@ header * {
   text-align: center;
   display: flex;
   flex-direction: column;
+  padding-bottom: 85px;
 }
-
-.bottom {
+header .bottom {
   width: 100%;
   height: 85px;
   overflow: hidden;
@@ -53,17 +44,29 @@ header * {
 
 header.collapsed {
   background: transparent;
+  height: 10vh;
 }
 header.collapsed .middle {
   height: 0vh;
+  padding-bottom: 0px;
 }
 header.collapsed .bottom {
   height: 0vh;
 }
+header.collapsed .hamburger .top-bar {
+  transform: unset;
+}
+header.collapsed .hamburger .middle-bar {
+  opacity: 1;
+  transition: 1s ease-in-out;
+}
+header.collapsed .hamburger .bottom-bar {
+  transform: unset;
+}
 
 .city {
-  font-family: "KILLINGEVE";
-  font-size: 4.5rem;
+  font-family: "KILLINGEVE", "unitext", "helvetica neue", helvetica, sans-serif;
+  font-size: 2.75rem;
   letter-spacing: 1.15px;
 }
 .city:first-child {
@@ -118,6 +121,247 @@ header.collapsed .bottom {
   }
   100% {
     transform: rotate(45deg) translateY(10px);
+  }
+}
+/* Hero Component */
+section.hero {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  /*background-attachment: fixed;*/
+  justify-content: flex-end;
+  color: white;
+  padding: 1rem;
+}
+section.hero .arrow-down {
+  margin: 0 auto;
+}
+
+.hero video {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  z-index: -1;
+  height: 90vh;
+  transform: translateX(-50%);
+  /*background-attachment: fixed;*/
+}
+
+.hero {
+  /*background-image: url(../img/dummy/hero-1.png);*/
+}
+
+/* Card CSS */
+.card {
+  height: 75vh;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  /*margin:1rem;*/
+  padding: 1rem;
+  color: white;
+}
+.card img {
+  max-width: 100%;
+}
+
+.articles {
+  background: black;
+}
+.articles .card:first-child {
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.76)), url(../img/dummy/le-marais-image.png);
+  border: none;
+}
+.articles .card:nth-child(2) {
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.76)), url(../img/dummy/sketch-london.png);
+  border: none;
+}
+
+.footer {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  align-items: center;
+  background: #222222;
+}
+.footer a {
+  text-decoration: none;
+  color: white;
+}
+.footer .left, .footer .right {
+  width: 25%;
+  max-width: 125px;
+}
+
+/* A Collection of Useful CSS Classes */
+.no-gutter {
+  margin: 0 !important;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.text-nowrap {
+  white-space: nowrap;
+}
+
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+@font-face {
+  font-family: "KILLINGEVE";
+  src: url("./fonts/KILLINGEVE-Regular.woff2") format("woff2"), url("./fonts/KILLINGEVE-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+/* fonts */
+h1, h2, h3, h4, h5, h6 {
+  margin: 1rem 0;
+}
+
+h1 {
+  font-family: "Unitext", Helvetica Neue, Helvetica, Sans-serif;
+  font-size: 4.25rem;
+  font-weight: 200;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 90%;
+  letter-spacing: -0.068rem;
+}
+
+h2 {
+  font-family: "Unitext", Helvetica Neue, Helvetica, Sans-serif;
+  font-size: 3.5rem;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 90%;
+  letter-spacing: -0.5px;
+}
+
+h3 {
+  font-family: "Unitext", Helvetica Neue, Helvetica, Sans-serif;
+  font-size: 2.75rem;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 90%;
+  letter-spacing: 1px;
+}
+
+h4 {
+  font-family: "Unitext", Helvetica Neue, Helvetica, Sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 90%;
+  letter-spacing: 0.25px;
+}
+
+h5 {
+  font-family: "Unitext", Helvetica Neue, Helvetica, Sans-serif;
+  font-size: 1.25;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 90%;
+  letter-spacing: 2px;
+}
+
+h6 {
+  font-family: "Unitext", Helvetica Neue, Helvetica, Sans-serif;
+  font-size: 1.125;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 90%;
+  letter-spacing: 2px;
+}
+
+/* branding */
+/* Layout */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 1.25rem;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Unitext", Helvetica Neue, Helvetica, Sans-Serif;
+  font-size: unset;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #000;
+  overflow-x: hidden;
+}
+
+.container-fixed {
+  max-width: 1920px;
+  background: rgba(255, 80, 80, 0.75);
+}
+
+.container-fluid {
+  width: 100%;
+}
+
+.row {
+  box-sizing: border-box;
+  padding: 2vh 3vw;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: calc(16 * 100vw / 787);
+  }
+}
+@media screen and (max-width: 767px) {
+  html {
+    font-size: calc(16 * 100vw / 676);
+  }
+}
+@media screen and (max-width: 540px) {
+  html {
+    font-size: calc(16 * 100vw / 450);
+  }
+
+  .row {
+    flex-direction: column;
   }
 }
 

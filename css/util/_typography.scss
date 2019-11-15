@@ -1,0 +1,65 @@
+
+h1, h2, h3, h4, h5, h6{
+  margin:1rem 0;
+}
+
+h1{
+  font-family: $font-primary;
+  font-size: 4.25rem;
+  font-weight: 200;
+  font-style: normal;
+  font-stretch: normal;
+  line-height:90%;
+  letter-spacing: -0.068rem;
+}
+
+h2{
+  font-family: $font-primary;
+  font-size: 3.5rem;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height:90%;
+  letter-spacing: -0.5px;
+}
+
+h3{
+  font-family: $font-primary;
+  font-size: 2.75rem;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height:90%;
+  letter-spacing: 1px;
+}
+
+h4{
+  font-family: $font-primary;
+  font-size: 2rem;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  line-height:90%;
+  letter-spacing: .25px;
+}
+
+h5{
+  font-family: $font-primary;
+  font-size: 1.25;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-style: normal;
+  font-stretch: normal;
+  line-height:90%;
+  letter-spacing: 2px;
+}
+
+h6{
+  font-family: $font-primary;
+  font-size: 1.125;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height:90%;
+  letter-spacing: 2px;
+}

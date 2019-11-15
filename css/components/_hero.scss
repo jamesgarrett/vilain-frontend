@@ -1,0 +1,28 @@
+/* Hero Component */
+
+section.hero{
+	height: 90vh;
+    display: flex;
+    flex-direction: column;
+    /*background-attachment: fixed;*/
+    justify-content: flex-end;
+    color:white;
+    padding:1rem;
+    .arrow-down{
+    	margin:0 auto;
+    }
+}
+
+.hero video {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    z-index: -1;
+    height: 90vh;
+    transform: translateX(-50%);
+    /*background-attachment: fixed;*/
+}
+
+.hero{
+    /*background-image: url(../img/dummy/hero-1.png);*/
+}

@@ -1,3 +1,10 @@
+@import "components/header";
+@import "components/hero";
+@import "components/card";
+@import "components/footer";
+@import "util/utilities";
+
+
 @font-face {
     font-family: 'KILLINGEVE';
     src: url('./fonts/KILLINGEVE-Regular.woff2') format('woff2'),
@@ -6,94 +13,79 @@
     font-style: normal;
 }
 
-:root {font-size: 14px;}
+/* fonts */
 
-header{
-  background:black;
-  position:fixed;
-  width:100%;
-  height:100vh;
-  transition: .75s ease-in-out;
-  *{transition: .5s ease-in-out;}
+$font-primary: 'Unitext', Helvetica Neue, Helvetica, Sans-serif;
 
+@import "util/typography";
+
+/* branding */
+
+$brand-primary: #ffffff;
+$brand-secondary: #ffc600;
+
+/* Layout */
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-.top{
+html{
+  font-size: 1.25rem;
+  overflow-x: hidden;
+}
+
+
+body{
+  font-family: 'Unitext', Helvetica Neue, Helvetica, Sans-Serif;
+  font-size:unset;
   width:100%;
-  height:10vh;
-  min-height: 85px;
-  background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 80%, rgba(0,0,0,.6) 100%);
+  height:100%;
+  margin:0;
+  padding:0;
+  background: #000;
+  overflow-x: hidden;
+}
+
+
+.container-fixed{
+  max-width:1920px;
+  //   set bg to make more visible
+  background:rgba(255,80,80,0.75);
+}
+
+.container-fluid{
+  width:100%;
+}
+
+.row{
+  box-sizing:border-box;
+  padding:2vh 3vw;
+  width:100%;
   display:flex;
-  justify-content:space-between;
-  padding: 1rem;
-  .one, .two, .three {
-    width: 90px;
+  flex-wrap:wrap;
+}
+
+
+@media screen and(max-width:1024px){
+  html{
+    font-size: calc(16 * 100vw / 787);
   }
 }
 
-.middle{
-  width:100%;
-  height:80vh;
-  font-size:6rem;
-  overflow:scroll;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-}
-
-.bottom{
-  width:100%;
-  height:85px;
-  overflow:hidden;
-  position:fixed;
-  bottom:0;
-  background:black;
-}
-
-header.collapsed{
-  background:transparent;
-  .middle{
-    height:0vh;
-  }
-  .bottom{
-    height:0vh;
+@media screen and(max-width:767px){
+  html{
+    font-size: calc(16 * 100vw / 676);
   }
 }
 
-.city{
-   font-family: "KILLINGEVE";
-   font-size: 4.5rem;
-   letter-spacing: 1.15px;
-   &:first-child{color:#F5000D;}
-   &:nth-child(2){color:#C8004C;}
-   &:nth-child(3){color:#9B0088;}
-   &:nth-child(4){color:#8600A6;}
-   &:nth-child(5){color:#9D28F3;}
-   &:nth-child(6){color:#8B59FF;}
- }
-
- .open .hamburger {
-    .top-bar {
-        animation:downRotate 1s alternate forwards;
-        transform-origin: 50% 50%;
-    }
-    .middle-bar {
-        opacity:0;
-        transition: 1s ease-in-out;
-    }
-    .bottom-bar {
-        animation:upRotate 1s alternate forwards;
-        transform-origin: 50% 50%;
-    }
+@media screen and (max-width:540px){
+  html{
+    font-size: calc(16 * 100vw / 450);
+  }
+  .row{
+    flex-direction:column;
+  }
 }
-@keyframes upRotate{
-    0% {transform:rotate(0deg) translateY(0px); }
-    50% {transform:rotate(0deg) translateY(-10px);}
-    100%{transform:rotate(-45deg) translateY(-10px);}
-}
-@keyframes downRotate{
-    0% {transform:rotate(0deg) translateY(0px);}
-    50% {transform:rotate(0deg) translateY(10px);}
-    100%{transform:rotate(45deg) translateY(10px);}
-}
-
